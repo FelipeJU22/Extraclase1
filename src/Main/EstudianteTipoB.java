@@ -13,4 +13,10 @@ public class EstudianteTipoB extends Informacion{ //Aquí se está aplicando la 
         promedioB = (getProyecto1()+getProyecto2()+getProyecto3())/3.0;
         return promedioB;
     }
+
+    public double nota_final() {
+        double resultado = 0.0;
+        resultado = getExamen_promedio() + getQuiz_promedio() + getTarea_promedio();
+        return resultado;
+    }
 }

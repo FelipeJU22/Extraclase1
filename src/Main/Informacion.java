@@ -114,8 +114,8 @@ public abstract class Informacion { //Clase Padre //También es lo abstracto par
         ArrayList<EstudianteTipoA> listaA = new ArrayList<>();
         ArrayList<EstudianteTipoB> listaB = new ArrayList<>();
         List<String> lista0 = new ArrayList<>();
-
-        Scanner lectura = new Scanner(new File());
+        //String archivo = MainController.arch;
+        Scanner lectura = new Scanner(new File("C:\\Users\\Yoshant\\Desktop"));
         lectura.useDelimiter("[,:\r\n]+");
         while (lectura.hasNext()){
             if (variable <= 1 ){

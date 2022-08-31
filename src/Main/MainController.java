@@ -1,23 +1,32 @@
 package Main;
 
 import javafx.fxml.FXML;
-import java.io.File;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
-import java.awt.event.ActionEvent;
+import javax.swing.*;
+import java.io.File;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MainController implements Initializable {
+
+    FileChooser seleccionador = new FileChooser();
 
 
-public class MainController {
     @FXML
-    private Label welcomeText;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Test!");
+    void getText(MouseEvent event) {
+        File archivo = seleccionador.showOpenDialog(new Stage());
+        String arch = String.valueOf(archivo);
+
+
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
 }

@@ -1,10 +1,6 @@
 package Main;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
 
 public abstract class Informacion { //Clase Padre //También es lo abstracto para crear las subclases
     private String carne;
@@ -22,10 +18,6 @@ public abstract class Informacion { //Clase Padre //También es lo abstracto par
     private String notaPA;
     private String notaPB;
     private Integer notaFinal;
-    ArrayList<EstudianteTipoA> estudiA = new ArrayList<>();
-    ArrayList<EstudianteTipoB> estudiB = new ArrayList<>();
-
-
     public Informacion(String carne, String nombre, String correo, String telefono, String nick, String tipo_estudiante, Integer examen_promedio,
                        Integer quiz_promedio, Integer tarea_promedio, Integer proyecto1, Integer proyecto2, Integer proyecto3, String notaPA, String notaPB, Integer notaFinal) {
         this.carne = carne;
@@ -105,7 +97,7 @@ public abstract class Informacion { //Clase Padre //También es lo abstracto par
         return proyecto3;
     }
 
-    public String getNB() {
+    public String getNotaPB() {
         return notaPB;
     }
 
@@ -133,9 +125,6 @@ public abstract class Informacion { //Clase Padre //También es lo abstracto par
     public abstract String nota();
 
     public abstract Integer nota_final();
-
-
-
 
 }
 

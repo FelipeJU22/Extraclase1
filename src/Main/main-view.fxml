@@ -25,8 +25,8 @@
             <TableColumn fx:id="slotProyecto1" prefWidth="100" text="Proyecto 1" />
             <TableColumn fx:id="slotProyecto2" prefWidth="100" text="Proyecto 2" />
             <TableColumn fx:id="slotProyecto3" prefWidth="100" text="Proyecto 3" />
-            <TableColumn fx:id="slotNotaA" minWidth="0.0" prefWidth="100" text="Promedio B" />
-            <TableColumn fx:id="slotNotaB" minWidth="0.0" prefWidth="100" text="Promedio A" />
+            <TableColumn fx:id="slotNotaA" minWidth="0.0" prefWidth="100" text="Promedio A" />
+            <TableColumn fx:id="slotNotaB" minWidth="0.0" prefWidth="100" text="Promedio B" />
             <TableColumn fx:id="slotFinal" minWidth="0.0" prefWidth="100" text="Nota Final" />
         </columns>
     </TableView>

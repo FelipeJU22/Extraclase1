@@ -58,26 +58,26 @@ public class MainController implements Initializable {
 
     @FXML
 
-    void getText(MouseEvent event) {
-        File archivo = seleccionador.showOpenDialog(new Stage());
+    private void getText(MouseEvent event) {
+        archivo = seleccionador.showOpenDialog(new Stage());
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         estudiantes = FXCollections.observableArrayList();
         this.slotCarne.setCellValueFactory(new PropertyValueFactory<>("carne"));
-        this.slotNombre.setCellValueFactory(new PropertyValueFactory<>("nombreApellidos"));
+        this.slotNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         this.slotCorreo.setCellValueFactory(new PropertyValueFactory<>("correo"));
         this.slotTelefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
-        this.slotNick.setCellValueFactory(new PropertyValueFactory<>("nickname"));
-        this.slotTipoEs.setCellValueFactory(new PropertyValueFactory<>("tipoEstudiante"));
-        this.slotPromedioE.setCellValueFactory(new PropertyValueFactory<>("notaPromedioE"));
-        this.slotPromedioQ.setCellValueFactory(new PropertyValueFactory<>("notaPromedioQ"));
-        this.slotPromedioT.setCellValueFactory(new PropertyValueFactory<>("notaPromedioT"));
-        this.slotProyecto1.setCellValueFactory(new PropertyValueFactory<>("notaP1"));
-        this.slotProyecto2.setCellValueFactory(new PropertyValueFactory<>("notaP2"));
-        this.slotProyecto3.setCellValueFactory(new PropertyValueFactory<>("notaP3"));
-        this.slotNotaA.setCellValueFactory(new PropertyValueFactory<>("notaPromedioTipoA"));
-        this.slotNotaB.setCellValueFactory(new PropertyValueFactory<>("notaPromedioTipoB"));
+        this.slotNick.setCellValueFactory(new PropertyValueFactory<>("nick"));
+        this.slotTipoEs.setCellValueFactory(new PropertyValueFactory<>("tipo_estudiante"));
+        this.slotPromedioE.setCellValueFactory(new PropertyValueFactory<>("examen_promedio"));
+        this.slotPromedioQ.setCellValueFactory(new PropertyValueFactory<>("quiz_promedio"));
+        this.slotPromedioT.setCellValueFactory(new PropertyValueFactory<>("tarea_promedio"));
+        this.slotProyecto1.setCellValueFactory(new PropertyValueFactory<>("proyecto1"));
+        this.slotProyecto2.setCellValueFactory(new PropertyValueFactory<>("proyecto2"));
+        this.slotProyecto3.setCellValueFactory(new PropertyValueFactory<>("proyecto3"));
+        this.slotNotaA.setCellValueFactory(new PropertyValueFactory<>("notaPA"));
+        this.slotNotaB.setCellValueFactory(new PropertyValueFactory<>("notaPB"));
         this.slotFinal.setCellValueFactory(new PropertyValueFactory<>("notaFinal"));
 
 
@@ -90,9 +90,6 @@ public class MainController implements Initializable {
         int B = 0;
 
 
-        ArrayList<EstudianteTipoA> listaA = new ArrayList<>();
-        ArrayList<EstudianteTipoB> listaB = new ArrayList<>();
-
         List<String> lista0 = new ArrayList<>();
         Scanner lectura = new Scanner(new File(String.valueOf(archivo)));
         lectura.useDelimiter("[,:\r\n]+");
@@ -103,13 +100,13 @@ public class MainController implements Initializable {
             }
             if (contador == 12) {
                 if (Objects.equals(lista0.get(5), "A")){
-                    listaA.add(new EstudianteTipoA(lista0.get(0), lista0.get(1), lista0.get(2), lista0.get(3), lista0.get(4),
+                    estudiantesA.add(new EstudianteTipoA(lista0.get(0), lista0.get(1), lista0.get(2), lista0.get(3), lista0.get(4),
                             lista0.get(5), Integer.parseInt(lista0.get(6)), Integer.parseInt(lista0.get(7)), Integer.parseInt(lista0.get(8)),
                             Integer.parseInt(lista0.get(9)), Integer.parseInt(lista0.get(10)), Integer.parseInt(lista0.get(11))," "," ",0));
                 }
 
                 else{
-                    listaB.add(new EstudianteTipoB(lista0.get(0), lista0.get(1), lista0.get(2), lista0.get(3), lista0.get(4),
+                    estudiantesB.add(new EstudianteTipoB(lista0.get(0), lista0.get(1), lista0.get(2), lista0.get(3), lista0.get(4),
                             lista0.get(5), Integer.parseInt(lista0.get(6)), Integer.parseInt(lista0.get(7)), Integer.parseInt(lista0.get(8)),
                             Integer.parseInt(lista0.get(9)), Integer.parseInt(lista0.get(10)), Integer.parseInt(lista0.get(11))," "," ",0));
                 }
@@ -122,13 +119,13 @@ public class MainController implements Initializable {
             }
         }
         if (Objects.equals(lista0.get(5), "A")){
-            listaA.add(new EstudianteTipoA(lista0.get(0), lista0.get(1), lista0.get(2), lista0.get(3), lista0.get(4),
+            estudiantesA.add(new EstudianteTipoA(lista0.get(0), lista0.get(1), lista0.get(2), lista0.get(3), lista0.get(4),
                     lista0.get(5), Integer.parseInt(lista0.get(6)), Integer.parseInt(lista0.get(7)), Integer.parseInt(lista0.get(8)),
                     Integer.parseInt(lista0.get(9)), Integer.parseInt(lista0.get(10)), Integer.parseInt(lista0.get(11))," "," ",0));
         }
 
         else{
-            listaB.add(new EstudianteTipoB(lista0.get(0), lista0.get(1), lista0.get(2), lista0.get(3), lista0.get(4),
+            estudiantesB.add(new EstudianteTipoB(lista0.get(0), lista0.get(1), lista0.get(2), lista0.get(3), lista0.get(4),
                     lista0.get(5), Integer.parseInt(lista0.get(6)), Integer.parseInt(lista0.get(7)), Integer.parseInt(lista0.get(8)),
                     Integer.parseInt(lista0.get(9)), Integer.parseInt(lista0.get(10)), Integer.parseInt(lista0.get(11))," "," ",0));
         }
@@ -148,8 +145,4 @@ public class MainController implements Initializable {
         this.Tabla.setItems(estudiantes);
         lectura.close();
     }
-
-
-
-
 }

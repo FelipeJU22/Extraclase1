@@ -29,7 +29,7 @@ public class MainController implements Initializable {
     @FXML
     private TableColumn<Informacion, String> slotCorreo;
     @FXML
-    private TableColumn<Informacion, String> slotTelef;
+    private TableColumn<Informacion, String> slotTelefono;
     @FXML
     private TableColumn<Informacion, String> slotNick;
     @FXML
@@ -60,9 +60,6 @@ public class MainController implements Initializable {
 
     void getText(MouseEvent event) {
         File archivo = seleccionador.showOpenDialog(new Stage());
-
-
-
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -70,7 +67,7 @@ public class MainController implements Initializable {
         this.slotCarne.setCellValueFactory(new PropertyValueFactory<>("carne"));
         this.slotNombre.setCellValueFactory(new PropertyValueFactory<>("nombreApellidos"));
         this.slotCorreo.setCellValueFactory(new PropertyValueFactory<>("correo"));
-        this.slotTelef.setCellValueFactory(new PropertyValueFactory<>("telefono"));
+        this.slotTelefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
         this.slotNick.setCellValueFactory(new PropertyValueFactory<>("nickname"));
         this.slotTipoEs.setCellValueFactory(new PropertyValueFactory<>("tipoEstudiante"));
         this.slotPromedioE.setCellValueFactory(new PropertyValueFactory<>("notaPromedioE"));
@@ -95,8 +92,8 @@ public class MainController implements Initializable {
 
         ArrayList<EstudianteTipoA> listaA = new ArrayList<>();
         ArrayList<EstudianteTipoB> listaB = new ArrayList<>();
+
         List<String> lista0 = new ArrayList<>();
-        //String archivo = MainController.arch;
         Scanner lectura = new Scanner(new File(String.valueOf(archivo)));
         lectura.useDelimiter("[,:\r\n]+");
         while (lectura.hasNext()){

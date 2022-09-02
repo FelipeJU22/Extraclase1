@@ -16,7 +16,7 @@
             <TableColumn fx:id="slotCarne" prefWidth="100" text="Carné" />
             <TableColumn fx:id="slotNombre" prefWidth="100" text="Nombre y Apellidos" />
             <TableColumn fx:id="slotCorreo" prefWidth="100" text="Correo" />
-            <TableColumn fx:id="slotTelef" prefWidth="100" text="Teléfono" />
+            <TableColumn fx:id="slotTelefono" prefWidth="100" text="Teléfono" />
             <TableColumn fx:id="slotNick" prefWidth="100" text="Nickname" />
             <TableColumn fx:id="slotTipoEs" prefWidth="100" text="Tipo de Estudainte" />
             <TableColumn fx:id="slotPromedioE" prefWidth="100" text="Nota Exámenes" />

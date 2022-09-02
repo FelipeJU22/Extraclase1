@@ -19,10 +19,15 @@ public abstract class Informacion { //Clase Padre //También es lo abstracto par
     private Integer proyecto1;
     private Integer proyecto2;
     private Integer proyecto3;
+    private String notaPA;
+    private String notaPB;
+    private Integer notaFinal;
+    ArrayList<EstudianteTipoA> estudiA = new ArrayList<>();
+    ArrayList<EstudianteTipoB> estudiB = new ArrayList<>();
 
 
     public Informacion(String carne, String nombre, String correo, String telefono, String nick, String tipo_estudiante, Integer examen_promedio,
-                       Integer quiz_promedio, Integer tarea_promedio, Integer proyecto1, Integer proyecto2, Integer proyecto3) {
+                       Integer quiz_promedio, Integer tarea_promedio, Integer proyecto1, Integer proyecto2, Integer proyecto3, String notaPA, String notaPB, Integer notaFinal) {
         this.carne = carne;
         this.nombre = nombre;
         this.correo = correo;
@@ -35,6 +40,9 @@ public abstract class Informacion { //Clase Padre //También es lo abstracto par
         this.proyecto1 = proyecto1;
         this.proyecto2 = proyecto2;
         this.proyecto3 = proyecto3;
+        this.notaPA = notaPA;
+        this.notaPB = notaPB;
+        this.notaFinal = notaFinal;
     }
 
     public String getCarne() {
@@ -97,64 +105,37 @@ public abstract class Informacion { //Clase Padre //También es lo abstracto par
         return proyecto3;
     }
 
-
-
-    public abstract double nota();
-
-    public double nota_final(){
-        double nota_estudiante = 0.0;
-        nota_estudiante = getExamen_promedio() + getQuiz_promedio() + getTarea_promedio();
-        return nota_estudiante;
+    public String getNB() {
+        return notaPB;
     }
 
-    public static void Main(String[] args) throws Exception {
-        int contador = 0;
-        int variable = 1;
-
-        ArrayList<EstudianteTipoA> listaA = new ArrayList<>();
-        ArrayList<EstudianteTipoB> listaB = new ArrayList<>();
-        List<String> lista0 = new ArrayList<>();
-        //String archivo = MainController.arch;
-        Scanner lectura = new Scanner(new File("C:\\Users\\Yoshant\\Desktop"));
-        lectura.useDelimiter("[,:\r\n]+");
-        while (lectura.hasNext()){
-            if (variable <= 1 ){
-                lectura.nextLine();
-                variable++;
-            }
-            if (contador == 12) {
-                if (Objects.equals(lista0.get(5), "A")){
-                    listaA.add(new EstudianteTipoA(lista0.get(0), lista0.get(1), lista0.get(2), lista0.get(3), lista0.get(4),
-                            lista0.get(5), Integer.parseInt(lista0.get(6)), Integer.parseInt(lista0.get(7)), Integer.parseInt(lista0.get(8)),
-                            Integer.parseInt(lista0.get(9)), Integer.parseInt(lista0.get(10)), Integer.parseInt(lista0.get(11))));
-                    }
-
-                else{
-                    listaB.add(new EstudianteTipoB(lista0.get(0), lista0.get(1), lista0.get(2), lista0.get(3), lista0.get(4),
-                            lista0.get(5), Integer.parseInt(lista0.get(6)), Integer.parseInt(lista0.get(7)), Integer.parseInt(lista0.get(8)),
-                            Integer.parseInt(lista0.get(9)), Integer.parseInt(lista0.get(10)), Integer.parseInt(lista0.get(11))));
-                }
-                lista0.clear();
-                contador = 0;
-                lectura.nextLine();
-            } else {
-                lista0.add(lectura.next());
-                contador++;
-            }
-        }
-        if (Objects.equals(lista0.get(5), "A")){
-            listaA.add(new EstudianteTipoA(lista0.get(0), lista0.get(1), lista0.get(2), lista0.get(3), lista0.get(4),
-                    lista0.get(5), Integer.parseInt(lista0.get(6)), Integer.parseInt(lista0.get(7)), Integer.parseInt(lista0.get(8)),
-                    Integer.parseInt(lista0.get(9)), Integer.parseInt(lista0.get(10)), Integer.parseInt(lista0.get(11))));
-        }
-
-        else{
-            listaB.add(new EstudianteTipoB(lista0.get(0), lista0.get(1), lista0.get(2), lista0.get(3), lista0.get(4),
-                    lista0.get(5), Integer.parseInt(lista0.get(6)), Integer.parseInt(lista0.get(7)), Integer.parseInt(lista0.get(8)),
-                    Integer.parseInt(lista0.get(9)), Integer.parseInt(lista0.get(10)), Integer.parseInt(lista0.get(11))));
-        }
-        lectura.close();
+    public void setNotaPB(String notaPB) {
+        this.notaPB = notaPB;
     }
+
+    public String getNotaPA() {
+        return notaPA;
+    }
+
+    public void setNotaPA(String notaPA) {
+        this.notaPA = notaPA;
+    }
+
+    public Integer getNotaFinal() {
+        return notaFinal;
+    }
+
+    public void setNotaFinal(Integer notaFinal) {
+        this.notaFinal = notaFinal;
+    }
+
+
+    public abstract String nota();
+
+    public abstract Integer nota_final();
+
+
+
 
 }
 

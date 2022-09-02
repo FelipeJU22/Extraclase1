@@ -2,7 +2,11 @@ package Main;
 
 import java.util.ArrayList;
 
-public abstract class Informacion { //Clase Padre //También es lo abstracto para crear las subclases
+public abstract class Informacion {
+    /**
+     * Clase Padre
+     * También es la abstracto para crear las subclases
+     */
     private String carne;
     private String nombre;
     private String correo;
@@ -20,6 +24,9 @@ public abstract class Informacion { //Clase Padre //También es lo abstracto par
     private Integer notaFinal;
     public Informacion(String carne, String nombre, String correo, String telefono, String nick, String tipo_estudiante, Integer examen_promedio,
                        Integer quiz_promedio, Integer tarea_promedio, Integer proyecto1, Integer proyecto2, Integer proyecto3, String notaPA, String notaPB, Integer notaFinal) {
+        /**
+         * se aplica el método constructor para la clase padre
+         */
         this.carne = carne;
         this.nombre = nombre;
         this.correo = correo;
@@ -36,7 +43,9 @@ public abstract class Informacion { //Clase Padre //También es lo abstracto par
         this.notaPB = notaPB;
         this.notaFinal = notaFinal;
     }
-
+    /**
+     * Métodos de la clase de Información
+     */
     public String getCarne() {
         return carne;
     }
@@ -121,7 +130,9 @@ public abstract class Informacion { //Clase Padre //También es lo abstracto par
         this.notaFinal = notaFinal;
     }
 
-
+    /**
+     * Métodos abstractos para utilizar en las clases de tipo A y B
+     */
     public abstract String nota();
 
     public abstract Integer nota_final();

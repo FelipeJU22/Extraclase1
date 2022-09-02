@@ -3,19 +3,14 @@ package Main;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
 import java.io.File;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-
-import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.*;
 
@@ -24,6 +19,7 @@ public class MainController implements Initializable {
     private ObservableList<Informacion> estudiantes;
     private ArrayList<EstudianteTipoA> estudiantesA = new ArrayList<>();
     private ArrayList<EstudianteTipoB> estudiantesB = new ArrayList<>();
+    private File archivo;
     @FXML
     private TableView<Informacion> Tabla;
     @FXML
@@ -95,14 +91,13 @@ public class MainController implements Initializable {
         int contador = 0;
         int A = 0;
         int B = 0;
-        String leerArchivo = ;
 
 
         ArrayList<EstudianteTipoA> listaA = new ArrayList<>();
         ArrayList<EstudianteTipoB> listaB = new ArrayList<>();
         List<String> lista0 = new ArrayList<>();
         //String archivo = MainController.arch;
-        Scanner lectura = new Scanner(new File());
+        Scanner lectura = new Scanner(new File(String.valueOf(archivo)));
         lectura.useDelimiter("[,:\r\n]+");
         while (lectura.hasNext()){
             if (variable <= 1 ){

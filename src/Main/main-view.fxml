@@ -2,39 +2,35 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="223.0" prefWidth="426.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.MainController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-    <Button onMouseClicked="#getText" prefHeight="34.0" prefWidth="148.0" text="Recibir" />
-</VBox>
-
-<VBox alignment="CENTER" prefHeight="481.0" prefWidth="946.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainController">
+<VBox alignment="CENTER" prefHeight="481.0" prefWidth="1540.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.MainController">
 <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
 </padding>
 <children>
-    <TableView fx:id="diosVen" prefHeight="378.0" prefWidth="906.0">
+    <TableView fx:id="Tabla" prefHeight="378.0" prefWidth="906.0">
         <columns>
             <TableColumn fx:id="slotCarne" prefWidth="100" text="Carné" />
             <TableColumn fx:id="slotNombre" prefWidth="100" text="Nombre y Apellidos" />
             <TableColumn fx:id="slotCorreo" prefWidth="100" text="Correo" />
-            <TableColumn fx:id="slotTelef" prefWidth="100" text="Telefono" />
-            <TableColumn fx:id="slotNickname" prefWidth="100" text="Nickname" />
-            <TableColumn fx:id="slotTipo" prefWidth="100" text="Tipo de Estudainte" />
-            <TableColumn fx:id="slotNPE" prefWidth="100" text="NotaPromedioEx" />
-            <TableColumn fx:id="slotNPQ" prefWidth="100" text="NotaPromedioQui" />
-            <TableColumn fx:id="slotNPT" prefWidth="100" text="NotaPromedioTar" />
-            <TableColumn fx:id="slotNP1" prefWidth="100" text="NotaProyecto1" />
-            <TableColumn fx:id="slotNP2" prefWidth="100" text="NotaProyecto2" />
-            <TableColumn fx:id="slotNP3" prefWidth="100" text="NotaProyecto3" />
-            <TableColumn fx:id="slotPA" minWidth="0.0" prefWidth="100" text="PromedioPoyectos" />
-            <TableColumn fx:id="slotPB" minWidth="0.0" prefWidth="100" text="PromedioExQuiTare" />
-            <TableColumn fx:id="slotFinal" minWidth="0.0" prefWidth="100" text="PromedioFinal" />
+            <TableColumn fx:id="slotTelef" prefWidth="100" text="Teléfono" />
+            <TableColumn fx:id="slotNick" prefWidth="100" text="Nickname" />
+            <TableColumn fx:id="slotTipoEs" prefWidth="100" text="Tipo de Estudainte" />
+            <TableColumn fx:id="slotPromedioE" prefWidth="100" text="Nota Exámenes" />
+            <TableColumn fx:id="slotPromedioQ" prefWidth="100" text="Nota Quices" />
+            <TableColumn fx:id="slotPromedioT" prefWidth="100" text="Nota Tareas" />
+            <TableColumn fx:id="slotProyecto1" prefWidth="100" text="Proyecto 1" />
+            <TableColumn fx:id="slotProyecto2" prefWidth="100" text="Proyecto 2" />
+            <TableColumn fx:id="slotProyecto3" prefWidth="100" text="Proyecto 3" />
+            <TableColumn fx:id="slotNotaA" minWidth="0.0" prefWidth="100" text="Promedio B" />
+            <TableColumn fx:id="slotNotaB" minWidth="0.0" prefWidth="100" text="Promedio A" />
+            <TableColumn fx:id="slotFinal" minWidth="0.0" prefWidth="100" text="Nota Final" />
         </columns>
     </TableView>
-    <Button mnemonicParsing="false" onMouseClicked="#empezarFiesta" text="Button" />
+    <Button mnemonicParsing="false" onMouseClicked="#crearTabla" text="Obtener CSV" />
+    <Button onMouseClicked="#getText" prefHeight="34.0" prefWidth="148.0" text="Cargar hoja CSV" />
 </children>
 </VBox>

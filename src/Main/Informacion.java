@@ -1,12 +1,11 @@
 package Main;
 
 import java.util.ArrayList;
-
+/**
+ * Clase Padre, de esta salen las dos clases hijas, la de estudiantes A y B
+ * También se hace abstracta para crear las subclases
+ */
 public abstract class Informacion {
-    /**
-     * Clase Padre, de esta salen las dos clases hijas, la de estudiantes A y B
-     * También se hace abstracta para crear las subclases
-     */
     private String carne;
     private String nombre;
     private String correo;

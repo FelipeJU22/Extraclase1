@@ -26,7 +26,8 @@ public class EstudianteTipoB extends Informacion{
 
     public Integer nota_final() {
         Integer resultado = 0;
-        resultado = getExamen_promedio() + getQuiz_promedio() + getTarea_promedio();
+        resultado = (getExamen_promedio() + getQuiz_promedio() + getTarea_promedio() + (getProyecto1() + getProyecto2() + getProyecto3())/3)/4;
+        setNotaFinal(resultado);
         return resultado;
     }
 }

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public abstract class Informacion {
     /**
-     * Clase Padre
-     * También es la abstracto para crear las subclases
+     * Clase Padre, de esta salen las dos clases hijas, la de estudiantes A y B
+     * También se hace abstracta para crear las subclases
      */
     private String carne;
     private String nombre;
@@ -131,7 +131,7 @@ public abstract class Informacion {
     }
 
     /**
-     * Métodos abstractos para utilizar en las clases de tipo A y B
+     * Métodos abstractos para utilizar en las clases de tipo A y B y poder calcular los promedios bien
      */
     public abstract String nota();
 

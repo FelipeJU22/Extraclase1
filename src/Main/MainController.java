@@ -14,12 +14,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.net.URL;
 import java.util.*;
 
-
+/**
+ * Esta clase recibe los valores del archivo CSV y crea objetos con ellos, haciendo con estos una fila por cada uno para rellenar la lista
+ * Además se utilizan las subclases de Información para poder utilizar sus distintos métodos
+ */
 public class MainController implements Initializable {
-    /**
-     * Esta es la clase que recibe los valores del archivo CSV y crea objetos con ellos, haciendo con estos una fila por cada uno para rellenar la lista
-     * Además se utilizan las subclases de Información para poder utilizar sus distintos métodos
-     */
+
     private ObservableList<Informacion> estudiantes;
     private ArrayList<EstudianteTipoA> estudiantesA = new ArrayList<>();
     private ArrayList<EstudianteTipoB> estudiantesB = new ArrayList<>();
@@ -56,22 +56,24 @@ public class MainController implements Initializable {
     private TableColumn<Informacion, Integer> slotNotaB;
     @FXML
     private TableColumn<Informacion, Integer> slotFinal;
-    /**
-     * Con esta se va a poder cargar la hoja CSV que se quiera con la ubicación que se seleccione
-     */
+
     FileChooser seleccionador = new FileChooser();
 
-
+    /**
+     * Con este método se va a poder cargar la hoja CSV que se quiera con la ubicación que se seleccione
+     */
     @FXML
-
     private void getText(MouseEvent event) {
+
         archivo = seleccionador.showOpenDialog(new Stage());
     }
+
+    /**
+     * Aquí se meten los datos en la tabla con los atributos de la clase padre (Información)
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        /**
-         * Aquí se meten los datos en la tabla con los atributos de la clase padre (Información)
-         */
+
         estudiantes = FXCollections.observableArrayList();
         this.slotCarne.setCellValueFactory(new PropertyValueFactory<>("carne"));
         this.slotNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
@@ -91,11 +93,12 @@ public class MainController implements Initializable {
 
 
     }
+    /**
+     * Método que añade los valores de la lista en la que está cada objeto para poder meterla en listas por aparte dividiendo estudiantes A y B
+     */
     @FXML
     private void crearTabla() throws Exception{
-        /**
-         * Método que añade los valores de la lista en la que está cada objeto para poder meterla en listas por aparte dividiendo estudiantes A y B
-         */
+
         int variable = 1;
         int contador = 0;
         int A = 0;

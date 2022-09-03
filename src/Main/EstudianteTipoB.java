@@ -1,5 +1,7 @@
 package Main;
-
+/**
+ * Clase hija de Información, aquí va a correr sus propios métodos para calcular las notas
+ */
 public class EstudianteTipoB extends Informacion{
     /**
      * Aquí se está aplicando la herencia, siendo clase hija
@@ -12,18 +14,19 @@ public class EstudianteTipoB extends Informacion{
     @Override
     /**
      * Se utiliza el concepto de sobreescritura
-     */
+     * Se hace el método para obtener la nota de tipo B
+     * Se utiliza el concepto de polimorfismo
+     * */
     public String nota() {
-        /**
-         * Se utiliza el concepto de polimorfismo
-         */
         Integer promedioB = 0;
 
-        promedioB = (getProyecto1()+getProyecto2()+getProyecto3())/6;
+        promedioB = (getProyecto1()+getProyecto2()+getProyecto3())/3;
         setNotaPB(Integer.toString(promedioB));
         return Integer.toString(promedioB);
     }
-
+    /**
+     * Se hace el método para obtener la nota final de los estudiantes B
+     */
     public Integer nota_final() {
         Integer resultado = 0;
         resultado = (getExamen_promedio() + getQuiz_promedio() + getTarea_promedio() + (getProyecto1() + getProyecto2() + getProyecto3())/3)/4;

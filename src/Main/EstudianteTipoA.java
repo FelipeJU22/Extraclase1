@@ -1,5 +1,7 @@
 package Main;
-
+/**
+ * Clase hija de Información, aquí va a correr sus propios métodos para calcular las notas
+ */
 public class EstudianteTipoA extends Informacion {
     /**
      * Aquí se está aplicando la herencia, siendo clase hija
@@ -19,7 +21,7 @@ public class EstudianteTipoA extends Informacion {
          */
         Integer promedioA = 0;
 
-        promedioA = (getExamen_promedio() + getQuiz_promedio() + getTarea_promedio()) / 6;
+        promedioA = (getExamen_promedio() + getQuiz_promedio() + getTarea_promedio()) / 3;
         setNotaPA(Integer.toString(promedioA));
         return Integer.toString(promedioA);
     }
